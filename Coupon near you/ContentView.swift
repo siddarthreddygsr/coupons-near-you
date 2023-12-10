@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var locationViewModel: LocationViewModel
-    @StateObject private var couponsViewModel = CouponssViewModel()
+    @StateObject private var couponsViewModel = CouponsViewModel()
     @StateObject private var cameraAuthorizationViewModel = CameraAuthorizationViewModel()
 
     var body: some View {
@@ -23,7 +23,7 @@ struct ContentView: View {
                     NoLocationPermissionView()
                 case .authorizedAlways, .authorizedWhenInUse:
                     MapCouponsView()
-                        .environmentObject(couponViewModel)
+                        .environmentObject(couponsViewModel)
                         .environmentObject(cameraAuthorizationViewModel)
                 default:
                     Text("Unknown status")
