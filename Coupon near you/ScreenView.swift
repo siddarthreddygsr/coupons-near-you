@@ -36,4 +36,3 @@ struct ScreenView_Previews: PreviewProvider {
         ScreenView()
     }
 }
-

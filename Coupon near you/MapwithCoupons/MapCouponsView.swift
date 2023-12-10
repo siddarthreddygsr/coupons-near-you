@@ -17,7 +17,7 @@ struct MapCouponsView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $region, showsUserLocation: showUserLocation, annotationItems: couponsViewModel.coupons) { coupon in
+            Map(coordinateRegion: $region, interactionModes: MapInteractionModes.all, showsUserLocation: showUserLocation, userTrackingMode: .constant(.follow), annotationItems: couponsViewModel.coupons) { coupon in
                 MapAnnotation(coordinate: coupon.coordinate.coordinate) {
                     Button(action: {
                         if let selectedCouponIndex = couponsViewModel.coupons.firstIndex(where: { $0.id == coupon.id }) {
@@ -103,7 +103,7 @@ struct MapCouponsView: View {
             
             VStack {
                 Spacer()
-                NavigationLink(destination: WalleView()
+                NavigationLink(destination: WalletView()
                     .environmentObject(couponsViewModel)
                 ) {
                     ZStack {

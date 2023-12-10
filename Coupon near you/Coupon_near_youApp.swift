@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Coupon_near_you_ARApp: App {
+struct Coupon_near_youApp: App {
     @StateObject private var locationViewModel = LocationViewModel()
     @State private var isShowingSplash = true
 
@@ -30,4 +30,3 @@ struct Coupon_near_you_ARApp: App {
         }
     }
 }
-

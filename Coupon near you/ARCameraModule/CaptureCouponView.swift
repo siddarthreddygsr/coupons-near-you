@@ -165,10 +165,3 @@ struct CaptureCouponView: View {
     }
 }
 
-struct CaptureCouponView_Previews: PreviewProvider {
-    static var previews: some View {
-//        comebackhere
-        CaptureCouponView()
-    }
-}
-
