@@ -15,14 +15,14 @@ final class CouponsViewModel: ObservableObject {
 
     let couponImages: [UIImage] = [
         UIImage(named: "pantry"),
-        UIImage(named: "cosmo"),
+        UIImage(named: "toys"),
         UIImage(named: "shoe")
     ].map { $0 ?? UIImage() }
     
     let couponDescriptions: [String: String] = [
         "pantry": "These coupons can be used to avail offers on select pantry items.",
-        "cosmo": "These coupons can be used to avail offers on select cosmetics.",
-        "shoe": "These coupons can be used to avail offers on select stationary products."
+        "toys": "These coupons can be used to avail offers on select toys.",
+        "shoe": "These coupons can be used to avail offers on select shoes."
     ]
     
     func generateInitialCoupons(with userCoordinate: CLLocationCoordinate2D) {
@@ -57,11 +57,11 @@ final class CouponsViewModel: ObservableObject {
     
     private func getCouponName(for image: UIImage) -> String {
         switch image {
-        case couponImages[1]:
-            return "pantry"
-        case couponImages[2]:
-            return "cosmo"
         case couponImages[0]:
+            return "pantry"
+        case couponImages[1]:
+            return "toys"
+        case couponImages[2]:
             return "shoe"
         default:
             return ""
